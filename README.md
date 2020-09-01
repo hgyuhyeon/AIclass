@@ -1,0 +1,2 @@
+# AIclass
+AI basic course
