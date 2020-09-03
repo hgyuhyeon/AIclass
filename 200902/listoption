@@ -1,0 +1,40 @@
+#for-while 사용
+for i in range(1, 101):
+    if(i % 10 == 0):
+        print(i)
+
+j = 1
+while(j <= 100):
+    if(j % 10 == 0):
+        print(j)
+    j+=1
+
+#
+nums = range(1, 101)
+# nums라는 리스트를 range함수를 이용하여 만듦.
+
+
+##
+# 2차원 행렬 생성
+MAX_ROW = 5
+MAX_COL = 4
+
+MATRIX = [['*' for j in range(MAX_COL)] for i in range(MAX_ROW)]
+#ROW의 for loop를 한번 돌 때마다
+#그 앞에 있는 COL의 for loop를 전부 돌게 된다.
+# -> 1행 생성 시 그 행에 열 배열 생성함.
+
+for k in range(MAX_ROW):
+    print(MATRIX[k])
+##
+
+
+# x y 두 리스트는 동일한 결과를 낸다.
+x = [(i*2) for i in [0,1,2,3,4]]
+print(x)
+
+y = list()
+for w in [0,1,2,3,4]:
+    y.append((i*2))
+
+#결과: [0, 2, 4, 6, 8]
