@@ -50,3 +50,42 @@ print(y_test[:]) #검증용 정답값
 #데이터 정확도
 from sklearn.metrics import accuracy_score
 print('predict accuracy: {}'.format(accuracy_score(y_test, pred))) #예측값 정답값 비교, 성능 검증
+
+
+
+
+
+#요약
+import pandas as pd
+import sklearn
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+iris = load_iris()
+x_train, x_test, y_train, y_test = train_test_split(iris.data,
+                                                    iris.target,
+                                                    test_size = 0.2,
+                                                    random_state = 11)
+dt_clf = DecisionTreeClassifier() #객체 생성자: dt_clf 모델 생성.
+dt_clf.fit(X=x_train, y=y_train) #학습 진행
+pred = dt_clf.predict(X=x_test) #예측값
+print('predict accuracy: {}'.format(accuracy_score(y_test, pred))) #예측값 정답값 비교, 성능 검증
+
+#Another Case: accurate prediction
+from sklearn.datasets import load_iris
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+iris=load_iris()
+
+train_data=iris.data
+train_label=iris.target
+
+dt_clf = DecisionTreeClassifier()
+dt_clf.fit(train_data, train_label)
+
+pred = dt_clf.predict(train_data) #1개의 데이터 사용(train_data)
+
+print('prediction accuracy: ',accuracy_score(train_label,pred)) #데이터가 1개이기때문에 정확함(100%)
+#시험 문제가 족보 문제와 100% 똑같은 격
